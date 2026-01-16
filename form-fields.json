@@ -1,0 +1,1088 @@
+[
+  {
+    "name": "4 - Mailing Address Street  Apt",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "5 - City",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "6 - State",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "7 - Zip",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "9 - Daytime Phone",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "10 - Email Address",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "17 - Gender",
+    "type": "PDFCheckBox",
+    "options": null,
+    "isChecked": false
+  },
+  {
+    "name": "20 -  Describe your disability if injury also state how when and where it occurred 1",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "21 -  Describe your disability if injury also state how when and where it occurred 2",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "22 - Date you became disabled",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "23 - Date you became disabled",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "24 - Date you became diabled",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "25 - Did you work that day?",
+    "type": "PDFCheckBox",
+    "options": null,
+    "isChecked": false
+  },
+  {
+    "name": "27 - Have you recovered from this disability?",
+    "type": "PDFCheckBox",
+    "options": null,
+    "isChecked": false
+  },
+  {
+    "name": "29 - date you were able to return to work",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "30 - date you were able to return to work",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "31 - date you were able to return to work",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "32 - Have you since worked for wages or profit?",
+    "type": "PDFCheckBox",
+    "options": null,
+    "isChecked": false
+  },
+  {
+    "name": "34 - List Dates",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "35 - Firm or Trade Name",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "36 - Address",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "37 - Phone Number",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "38 - First Day",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "39 - Last Day Worked",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "40 - Average Weekly Wage",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "41 - Firm or Trade Name",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "42 - Address",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "43 - Phone Number",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "44 - First Day",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "45 - Last Day Worked",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "46 - Average Weekly Wage",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "47 - Last Day Worked",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "48 - No of Days Worked",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "49 - Gross Amount Paid",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "50 - Last Day Worked",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "51 - No of Days Worked",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "52 - Gross Amount Paid",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "53 - Last Day Worked",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "54 - No of Days Worked",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "55 - Gross Amount Paid",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "56 - Last Day Worked",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "57 - No of Days Worked",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "58 - Gross Amount Paid",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "59 - Last Day Worked",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "60 - No of Days Worked",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "61 - Gross Amount Paid",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "62 - Last Day Worked",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "63- No of Days Worked",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "64 - Gross Amount Paid",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "65 - Last Day Worked",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "66 - No of Days Worked",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "67 - Gross Amount Paid",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "68 - Last Day Worked",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "69 - No of Days Worked",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "70 - Gross Amount Paid",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "71 - Calculated average gross weekly wage:",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "72 -  My job is or was",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "73 - Union Member?",
+    "type": "PDFCheckBox",
+    "options": null,
+    "isChecked": false
+  },
+  {
+    "name": "75 - Name of Union",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "76 - Were you claiming or receiving unemployment prior to this disability?",
+    "type": "PDFCheckBox",
+    "options": null,
+    "isChecked": false
+  },
+  {
+    "name": "78 - Explain",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "79 - Explain",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "80 - If you did receive unemployment benefits, provide all periods collected",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "1 - Claim Number",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "2 - A.\tAre you receiving wages, salary or separation pay?",
+    "type": "PDFCheckBox",
+    "options": null,
+    "isChecked": false
+  },
+  {
+    "name": "3 - Unemployment Benefits?",
+    "type": "PDFCheckBox",
+    "options": null,
+    "isChecked": false
+  },
+  {
+    "name": "4 - Paid Family Leave?",
+    "type": "PDFCheckBox",
+    "options": null,
+    "isChecked": false
+  },
+  {
+    "name": "5 - Workers Compensation?",
+    "type": "PDFCheckBox",
+    "options": null,
+    "isChecked": false
+  },
+  {
+    "name": "6 - No fault motor vehicle accident?",
+    "type": "PDFCheckBox",
+    "options": null,
+    "isChecked": false
+  },
+  {
+    "name": "7 - personal injury involving third party?",
+    "type": "PDFCheckBox",
+    "options": null,
+    "isChecked": false
+  },
+  {
+    "name": "8 - Long-term disability benefits under the Federal Social Security Act for this disability?",
+    "type": "PDFCheckBox",
+    "options": null,
+    "isChecked": false
+  },
+  {
+    "name": "9 - If yes is checked",
+    "type": "PDFCheckBox",
+    "options": null,
+    "isChecked": false
+  },
+  {
+    "name": "10 - Claimed from",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "11 - for the period",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "12 - for the period of",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "13 - for the period of",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "14 - for the period",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "15 - for the period of",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "16 - for the period of",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "17 - have you received disability benefits for other periods of disability?",
+    "type": "PDFCheckBox",
+    "options": null,
+    "isChecked": false
+  },
+  {
+    "name": "18 - If yes Paid by",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "19 - From",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "20 - From",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "21 - From",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "22 - To",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "23 - To",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "24 - To",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "25 -  In the year (52 weeks) before your disability began, have you received Paid Family Leave?",
+    "type": "PDFCheckBox",
+    "options": null,
+    "isChecked": false
+  },
+  {
+    "name": "26 - If yes Paid by",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "27 - From",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "28 - From",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "29 - From",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "30 - To",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "31 - To",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "32 - To",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "33 - Signature Date",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "34 - Address of signatory on behalf of the claimant",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "35 - Relationship to Claimant",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "3 - Mailing Address",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "4 - City State Zip Code",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "5 - Country if not USA",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "7 - Employers contact name for questions relating to disability",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "9 - Employers contact phone number",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "10 - Employers contact email address",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "11 - Is the employee a member of a union?",
+    "type": "PDFCheckBox",
+    "options": null,
+    "isChecked": false
+  },
+  {
+    "name": "12 - If yes provide Union name address and contact information",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "13 - If yes provide Union name address and contact information",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "14 - Employees Role",
+    "type": "PDFCheckBox",
+    "options": null,
+    "isChecked": false
+  },
+  {
+    "name": "15 - Employees date of hire",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "16 - Date employee last worked",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "17 - Date employee returned to work if applicable",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "18 - Were wages continued during disability?",
+    "type": "PDFCheckBox",
+    "options": null,
+    "isChecked": false
+  },
+  {
+    "name": "19 - If yes what type PTO sick time other",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "20 - If yes, is reimbursement requested by employer?",
+    "type": "PDFCheckBox",
+    "options": null,
+    "isChecked": false
+  },
+  {
+    "name": "21 - Is the employee's disability work-related?",
+    "type": "PDFCheckBox",
+    "options": null,
+    "isChecked": false
+  },
+  {
+    "name": "22 - Week ending date",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "23 - No of days worked",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "24 - Gross amount paid",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "25 - Week ending date",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "26 - No of days worked",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "27 - Gross amount paid",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "28 - Week ending date",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "29 - No of days worked",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "30 - Gross amount paid",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "31 - Week ending date",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "32 - No of days worked",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "33 - Gross amount paid",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "34 - Week ending date",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "35 - No of days worked",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "36 - Gross amount paid",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "37 - Week ending date",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "38 - No of days worked",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "39 - Gross amount paid",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "40 - Week ending date",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "41 - No of days worked",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "42 - Gross amount paid",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "43 - Week ending date",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "44 - No of days worked",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "45 - Gross amount paid",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "46 - Gross amount paidCalculated average gross weekly wage",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "47 - In the preceding 52 weeks has the employee taken leave for:",
+    "type": "PDFCheckBox",
+    "options": null,
+    "isChecked": false
+  },
+  {
+    "name": "48 - Disability Please provide specific dates for disability",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "49 - PFL: Please provide specific dates for PFL",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "50 - Is employee still in your employment?",
+    "type": "PDFCheckBox",
+    "options": null,
+    "isChecked": false
+  },
+  {
+    "name": "51 - If no date employment was terminated",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "52 - If employee received unemployment benefits date the benefit was last received",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "1 - Employer Name and Title",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "2 - Employer Contact Phone Number",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "3 - Date",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "10 - Payment",
+    "type": "PDFCheckBox",
+    "options": null,
+    "isChecked": false
+  },
+  {
+    "name": "11 - Date signed",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "12 - Date Signed",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "13 - Date signed",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "19 - Yes  dollar amount per week",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "20 - percentage of contribution",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "18 - Does employee contribute?",
+    "type": "PDFCheckBox",
+    "options": null,
+    "isChecked": false
+  },
+  {
+    "name": "21 - Employer Name  and Title",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "22 - Employer Contact Email",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "23 - Employer Contact Phone",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "24 - Employer Contact Phone",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "25 - Date Signed",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "26 - Date Signed",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "27 - Date Signed",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "2 - Last Name",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "3 - First Name",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "11 - Social Security 1",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "12 - Social 2",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "13 - Social Security",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "14 - Date of Birth",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "15 - Date of Birth",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "16 - Date of Birth",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "2 - Business Name",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "6 - Employers FEIN",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "6a - Employers FEIN",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "1 - Policy Number",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "3a - Middle Initial",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "4 Checking account",
+    "type": "PDFCheckBox",
+    "options": null,
+    "isChecked": false
+  },
+  {
+    "name": "4 Savings account",
+    "type": "PDFCheckBox",
+    "options": null,
+    "isChecked": false
+  },
+  {
+    "name": "EOBs",
+    "type": "PDFCheckBox",
+    "options": null,
+    "isChecked": false
+  },
+  {
+    "name": "Date mmddyyyy",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  },
+  {
+    "name": "6a - FEIN2",
+    "type": "PDFTextField",
+    "options": null,
+    "isChecked": null
+  }
+]

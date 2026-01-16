@@ -1,0 +1,20 @@
+{
+  "name": "ny-dbl-form-filler",
+  "version": "1.0.0",
+  "description": "Automated NY DBL form filler with persistent fake data generation",
+  "main": "fill-form.js",
+  "scripts": {
+    "fill": "node fill-form.js",
+    "preview": "node fill-form.js --preview",
+    "extract-fields": "node extract-fields.js",
+    "batch": "node batch-fill.js"
+  },
+  "keywords": ["pdf", "form", "faker", "automation", "ny-dbl"],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@faker-js/faker": "^10.2.0",
+    "pdf-lib": "^1.17.1"
+  }
+}
