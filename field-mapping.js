@@ -35,8 +35,8 @@ const FieldMappings = {
   '15 - Date of Birth': { type: 'calculated', generator: 'dobDay' },
   '16 - Date of Birth': { type: 'calculated', generator: 'dobYear' },
 
-  // Gender Checkbox
-  '17 - Gender': { type: 'checkbox', probability: 0.5 },
+  // Gender Checkbox (M/F/X options)
+  '17 - Gender': { type: 'checkbox-multi', generator: 'genderSelection' },
 
   // Disability Description - AI REQUIRED
   '20 -  Describe your disability if injury also state how when and where it occurred 1': {

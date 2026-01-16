@@ -15,6 +15,8 @@ class DataGenerator {
     this.dataDir = options.dataDir || './generated-data';
     this.useAI = options.useAI || false;
     this.aiCallback = options.aiCallback || null;
+    this.silent = options.silent || false;
+    this.log = this.silent ? () => {} : console.log.bind(console);
 
     // Ensure data directory exists
     if (!fs.existsSync(this.dataDir)) {
@@ -26,12 +28,12 @@ class DataGenerator {
     // Load existing data or generate new
     if (fs.existsSync(this.dataFile)) {
       this.data = JSON.parse(fs.readFileSync(this.dataFile, 'utf-8'));
-      console.log(`Loaded existing data for run: ${runId}`);
+      this.log(`Loaded existing data for run: ${runId}`);
     } else {
       faker.seed(this.seed);
       this.data = this.generateBaseData();
       this.saveData();
-      console.log(`Generated new data for run: ${runId} (seed: ${this.seed})`);
+      this.log(`Generated new data for run: ${runId} (seed: ${this.seed})`);
     }
   }
 
@@ -246,7 +248,7 @@ class DataGenerator {
 
   saveData() {
     fs.writeFileSync(this.dataFile, JSON.stringify(this.data, null, 2));
-    console.log(`Data saved to: ${this.dataFile}`);
+    this.log(`Data saved to: ${this.dataFile}`);
   }
 
   // Format date as MM/DD/YYYY
@@ -408,6 +410,12 @@ class DataGenerator {
         if (hadDisability) return 'NYS#20Disability';
         if (hadPFL) return 'PFL';
         return 'None';
+      },
+
+      // Gender selection - randomly choose Male, Female, or X
+      genderSelection: () => {
+        faker.seed(this.seed + 17); // Consistent seed for gender field
+        return faker.helpers.arrayElement(['Male', 'Female', 'X']);
       },
     };
 

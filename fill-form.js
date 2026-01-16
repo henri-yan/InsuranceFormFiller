@@ -93,13 +93,16 @@ function setMultiWidgetCheckboxValue(checkBox, pdfDoc, targetValue, onValues) {
 }
 
 async function fillForm(runId, options = {}) {
-  console.log('\n=== NY DBL Form Filler ===\n');
-  console.log(`Run ID: ${runId}`);
+  const log = options.silent ? () => {} : console.log.bind(console);
+
+  log('\n=== NY DBL Form Filler ===\n');
+  log(`Run ID: ${runId}`);
 
   // Initialize data generator
   const generator = new DataGenerator(runId, {
     useAI: options.ai || false,
     aiCallback: options.aiCallback || null,
+    silent: options.silent || false,
   });
 
   const data = generator.getData();
@@ -121,7 +124,7 @@ async function fillForm(runId, options = {}) {
 
   // Get all form fields
   const fields = form.getFields();
-  console.log(`\nProcessing ${fields.length} form fields...\n`);
+  log(`\nProcessing ${fields.length} form fields...\n`);
 
   for (const field of fields) {
     const fieldName = field.getName();
@@ -234,31 +237,31 @@ async function fillForm(runId, options = {}) {
 
   // Preview mode - just print values
   if (options.preview) {
-    console.log('\n=== PREVIEW MODE ===\n');
-    console.log('Generated Data Summary:');
-    console.log(`  Claimant: ${data.claimant.fullName}`);
-    console.log(`  SSN: ${data.claimant.ssn.full}`);
-    console.log(`  DOB: ${generator.formatDate(data.claimant.dateOfBirth).full}`);
-    console.log(`  Employer: ${data.employer.name}`);
-    console.log(`  Disability Start: ${generator.formatDate(data.dates.disabilityStart).full}`);
-    console.log(`  Avg Weekly Wage: $${data.wages.averageWeeklyWage.toFixed(2)}`);
+    log('\n=== PREVIEW MODE ===\n');
+    log('Generated Data Summary:');
+    log(`  Claimant: ${data.claimant.fullName}`);
+    log(`  SSN: ${data.claimant.ssn.full}`);
+    log(`  DOB: ${generator.formatDate(data.claimant.dateOfBirth).full}`);
+    log(`  Employer: ${data.employer.name}`);
+    log(`  Disability Start: ${generator.formatDate(data.dates.disabilityStart).full}`);
+    log(`  Avg Weekly Wage: $${data.wages.averageWeeklyWage.toFixed(2)}`);
 
-    console.log('\n=== Filled Fields ===\n');
+    log('\n=== Filled Fields ===\n');
     filledFields.forEach(f => {
-      console.log(`  [${f.type}] ${f.name}: ${f.value}`);
+      log(`  [${f.type}] ${f.name}: ${f.value}`);
     });
 
     if (skippedFields.length > 0) {
-      console.log('\n=== Skipped Fields ===\n');
+      log('\n=== Skipped Fields ===\n');
       skippedFields.forEach(f => {
-        console.log(`  ${f.name}: ${f.reason}`);
+        log(`  ${f.name}: ${f.reason}`);
       });
     }
 
     if (errors.length > 0) {
-      console.log('\n=== Errors ===\n');
+      log('\n=== Errors ===\n');
       errors.forEach(e => {
-        console.log(`  ${e.name}: ${e.error}`);
+        log(`  ${e.name}: ${e.error}`);
       });
     }
 
@@ -268,7 +271,7 @@ async function fillForm(runId, options = {}) {
   // Flatten form if requested
   if (options.flatten) {
     form.flatten();
-    console.log('Form flattened (fields are now non-editable)');
+    log('Form flattened (fields are now non-editable)');
   }
 
   // Save PDF
@@ -281,11 +284,11 @@ async function fillForm(runId, options = {}) {
   const filledPdfBytes = await pdfDoc.save();
   fs.writeFileSync(outputPath, filledPdfBytes);
 
-  console.log(`\n=== Summary ===`);
-  console.log(`  Fields filled: ${filledFields.length}`);
-  console.log(`  Fields skipped: ${skippedFields.length}`);
-  console.log(`  Errors: ${errors.length}`);
-  console.log(`\n  Output saved to: ${outputPath}`);
+  log(`\n=== Summary ===`);
+  log(`  Fields filled: ${filledFields.length}`);
+  log(`  Fields skipped: ${skippedFields.length}`);
+  log(`  Errors: ${errors.length}`);
+  log(`\n  Output saved to: ${outputPath}`);
 
   // Save a report
   const reportPath = path.join(outputDir, `${runId}-report.json`);
@@ -300,7 +303,7 @@ async function fillForm(runId, options = {}) {
     outputPath,
   }, null, 2));
 
-  console.log(`  Report saved to: ${reportPath}\n`);
+  log(`  Report saved to: ${reportPath}\n`);
 
   return { data, filledFields, skippedFields, errors, outputPath };
 }
