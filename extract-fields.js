@@ -23,7 +23,32 @@ async function extractFormFields() {
     if (type === 'PDFCheckBox') {
       try {
         isChecked = field.isChecked();
-      } catch (e) {}
+        // Get on-values
+        const acroField = field.acroField;
+        const widgets = acroField.getWidgets();
+        const onValues = [];
+        widgets.forEach((widget) => {
+          const ap = widget.dict.get(require('pdf-lib').PDFName.of('AP'));
+          if (ap) {
+            const apDict = pdfDoc.context.lookup(ap);
+            const normal = apDict?.get(require('pdf-lib').PDFName.of('N'));
+            if (normal) {
+              const normalDict = pdfDoc.context.lookup(normal);
+              if (normalDict) {
+                normalDict.entries().forEach(([k]) => {
+                  const keyStr = k.toString();
+                  if (keyStr !== '/Off') {
+                    onValues.push(keyStr.slice(1));
+                  }
+                });
+              }
+            }
+          }
+        });
+        options = onValues; // reuse options field for display
+      } catch (e) {
+        console.log('Error getting check values:', e.message);
+      }
     }
     if (type === 'PDFRadioGroup') {
       try {

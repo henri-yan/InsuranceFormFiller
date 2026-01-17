@@ -1,0 +1,222 @@
+{
+  "last name claimant": {
+    "x": 100,
+    "y": 368
+  },
+  "first name claimant": {
+    "x": 328,
+    "y": 368
+  },
+  "middle initial claimant": {
+    "x": 514,
+    "y": 368
+  },
+  "gender male": {
+    "x": 89,
+    "y": 351
+  },
+  "gender female": {
+    "x": 118,
+    "y": 351
+  },
+  "gender X": {
+    "x": 144,
+    "y": 352
+  },
+  "DOB mm": {
+    "x": 254,
+    "y": 351
+  },
+  "DOB dd": {
+    "x": 278,
+    "y": 350
+  },
+  "DOB yyyy": {
+    "x": 311,
+    "y": 351
+  },
+  "Diagnosis analysis": {
+    "x": 135,
+    "y": 338
+  },
+  "diagnosis code": {
+    "x": 462,
+    "y": 337
+  },
+  "claimant symptoms": {
+    "x": 158,
+    "y": 318
+  },
+  "objective findings": {
+    "x": 141,
+    "y": 288
+  },
+  "claimant hospitalized yes": {
+    "x": 156,
+    "y": 267
+  },
+  "claimant hospitalized no": {
+    "x": 187,
+    "y": 265
+  },
+  "claimant hospitalized yes from: mm": {
+    "x": 247,
+    "y": 265
+  },
+  "claimant hospitalized yes from: dd": {
+    "x": 274,
+    "y": 266
+  },
+  "claimant hospitalized yes from: yyyy": {
+    "x": 304,
+    "y": 266
+  },
+  "claimant hospitalized yes to(until): mm": {
+    "x": 365,
+    "y": 266
+  },
+  "claimant hospitalized yes to(until): dd": {
+    "x": 394,
+    "y": 266
+  },
+  "claimant hospitalized yes to(until): yyyy": {
+    "x": 426,
+    "y": 266
+  },
+  "operation indicated yes": {
+    "x": 156,
+    "y": 248
+  },
+  "opeariton indicated no": {
+    "x": 186,
+    "y": 248
+  },
+  "operation indicated yes type": {
+    "x": 255,
+    "y": 248
+  },
+  "operation indicated yes mm": {
+    "x": 438,
+    "y": 248
+  },
+  "operation indicated yes dd": {
+    "x": 468,
+    "y": 247
+  },
+  "operation indicated yes yyyy": {
+    "x": 501,
+    "y": 246
+  },
+  "date of first treatment mm": {
+    "x": 339,
+    "y": 218
+  },
+  "date of first treatment dd": {
+    "x": 424,
+    "y": 218
+  },
+  "date of first treatment yyyy": {
+    "x": 504,
+    "y": 218
+  },
+  "date of most recent treatment mm": {
+    "x": 340,
+    "y": 207
+  },
+  "date of most recent treatment dd": {
+    "x": 424,
+    "y": 207
+  },
+  "date of most recent treatment yyyy": {
+    "x": 506,
+    "y": 208
+  },
+  "date claimant unable to work from mm": {
+    "x": 339,
+    "y": 196
+  },
+  "date claimant unable to work from dd": {
+    "x": 425,
+    "y": 196
+  },
+  "date claimant unable to work from yyyy": {
+    "x": 505,
+    "y": 196
+  },
+  "date claimant able to work again mm": {
+    "x": 339,
+    "y": 180
+  },
+  "date claimant able to work again dd": {
+    "x": 425,
+    "y": 181
+  },
+  "date claimant able to work again yyyy": {
+    "x": 504,
+    "y": 180
+  },
+  "if pregnancy if an related estimated delivery date": {
+    "x": 66,
+    "y": 156
+  },
+  "if pregnancy if actual delivery date": {
+    "x": 176,
+    "y": 156
+  },
+  "delivery date mm": {
+    "x": 339,
+    "y": 160
+  },
+  "delivery date dd": {
+    "x": 426,
+    "y": 160
+  },
+  "delivery date yyyy": {
+    "x": 505,
+    "y": 160
+  },
+  "is the injury result of work yes": {
+    "x": 54,
+    "y": 128
+  },
+  "is the injury result of work no": {
+    "x": 85,
+    "y": 128
+  },
+  "is the injury result of work yes and medical was filed with board": {
+    "x": 311,
+    "y": 129
+  },
+  "is the injury result of work yes and medical was not filed with board": {
+    "x": 342,
+    "y": 128
+  },
+  "health care provider role (physician, chircopractor, dentist, podiatrist, psychologist, nurse, midwife)": {
+    "x": 44,
+    "y": 95
+  },
+  "license or certified state": {
+    "x": 295,
+    "y": 94
+  },
+  "license number": {
+    "x": 433,
+    "y": 96
+  },
+  "health care providers name": {
+    "x": 48,
+    "y": 67
+  },
+  "date": {
+    "x": 482,
+    "y": 68
+  },
+  "health care providers address": {
+    "x": 50,
+    "y": 44
+  },
+  "phone number (pay attention to certified/licensed state area code)": {
+    "x": 454,
+    "y": 43
+  }
+}

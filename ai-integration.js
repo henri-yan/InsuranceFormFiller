@@ -158,11 +158,11 @@ class GroqProvider extends AIProvider {
         properties: {
           line1: {
             type: 'string',
-            description: 'SHORT diagnosis statement (max 51 characters). Just the condition name. Example: "Lower back strain with herniated disc L4-L5."'
+            description: 'SHORT diagnosis statement (max 48 characters). Just the condition name. Example: "Lower back strain with herniated disc L4-L5."'
           },
           line2: {
             type: 'string',
-            description: 'Details about symptoms, how/when it occurred, and restrictions (max 190 characters). Example: "Pain radiates down left leg. Occurred while lifting boxes at home on 12/15/2025. Unable to sit or stand for extended periods."'
+            description: 'Details about symptoms, how/when it occurred, and restrictions (max 170 characters). Example: "Pain radiates down left leg. Occurred while lifting boxes at home on 12/15/2025. Unable to sit or stand for extended periods."'
           }
         },
         required: ['line1', 'line2'],
@@ -181,8 +181,8 @@ Generate realistic but completely fictional medical information for testing purp
 IMPORTANT CONSTRAINTS:
 - The disability must be NON-WORK-RELATED (this is for state disability, not workers comp)
 - Common conditions: back injuries, knee problems, surgery recovery, pregnancy complications, chronic conditions
-- line1 MUST be 51 characters or less: just the diagnosis/condition name
-- line2 MUST be 190 characters or less: symptoms, how/when it occurred, and restrictions
+- line1 MUST be 48 characters or less: just the diagnosis/condition name
+- line2 MUST be 170 characters or less: symptoms, how/when it occurred, and restrictions
 - Be specific with medical terminology but keep it realistic
 - Reference the disability start date: ${disabilityDate}
 
@@ -202,6 +202,70 @@ Context:
         json_schema: schema
       },
       temperature: 0.7
+    });
+
+    const content = response.choices[0].message.content;
+    return JSON.parse(content);
+  }
+
+  /**
+   * Generate Part B medical details (Diagnosis, Symptoms, Findings)
+   * Enforcing 70 character limit per field.
+   */
+  async generateMedicalDetails(context) {
+    const client = await this.getClient();
+
+    const schema = {
+      name: 'medical_provider_details',
+      description: 'Generate medical observations for Part B of the form',
+      schema: {
+        type: 'object',
+        properties: {
+          diagnosisAnalysis: {
+            type: 'string',
+            description: 'Medical diagnosis/analysis. MAX 70 CHARACTERS. Example: "Acute Lumbago with Sciatica"'
+          },
+          symptoms: {
+            type: 'string',
+            description: 'Patient reported symptoms. MAX 70 CHARACTERS. Example: "Severe lower back pain radiating to left leg"'
+          },
+          objectiveFindings: {
+            type: 'string',
+            description: 'Objective medical findings. MAX 70 CHARACTERS. Example: "Muscle spasm in lumbar region, limited range of motion"'
+          },
+          icdCode: {
+            type: 'string',
+            description: 'ICD-10 Code. Example: "M54.5"'
+          }
+        },
+        required: ['diagnosisAnalysis', 'symptoms', 'objectiveFindings', 'icdCode'],
+        additionalProperties: false
+      },
+      strict: true
+    };
+
+    const systemPrompt = `You are a Doctor filling out Part B of a NY State Disability Form.
+GENERATE FICTIONAL MEDICAL DATA.
+CRITICAL CONSTRAINT: Each text field MUST be 70 characters or less.
+
+Context:
+- Patient: ${context.claimant?.fullName}
+- Condition/History: ${context.medical?.fullDescription || context.medical?.condition || 'Back Injury'}
+
+Ensure your diagnosis and findings are consistent with the patient's condition history provided above.
+`;
+
+    const response = await client.chat.completions.create({
+      messages: [
+        { role: 'system', content: systemPrompt },
+        { role: 'user', content: 'Generate medical details for Part B.' }
+      ],
+      model: this.model,
+      response_format: {
+        type: 'json_schema',
+        json_schema: schema
+      },
+      temperature: 0.5
     });
 
     const content = response.choices[0].message.content;
@@ -263,13 +327,22 @@ class MockProvider extends AIProvider {
 
     return responses[this.callCount % responses.length];
   }
+
+  async generateMedicalDetails(context) {
+    return {
+      diagnosisAnalysis: 'Lumbar Strain (Mock)',
+      symptoms: 'Lower back pain radiating to leg (Mock)',
+      objectiveFindings: 'Muscle spasm, reduced range of motion (Mock)',
+      icdCode: 'M54.5'
+    };
+  }
 }
 
 /**
  * Create an AI callback function for use with the form filler
  */
 function createAICallback(provider) {
-  return async function aiCallback(prompt, category, data) {
+  const callback = async function aiCallback(prompt, category, data) {
     try {
       const result = await provider.generate(prompt, data);
       return result;
@@ -279,6 +352,13 @@ function createAICallback(provider) {
       return '';
     }
   };
+
+  // Attach specific generator methods if available
+  if (provider.generateMedicalDetails) {
+    callback.generateMedicalDetails = (ctx) => provider.generateMedicalDetails(ctx);
+  }
+  
+  return callback;
 }
 
 /**
@@ -299,6 +379,10 @@ function createGroqCallback(apiKey, model = 'moonshotai/kimi-k2-instruct') {
 
   // Attach reset method for use between forms in batch mode
   callback.resetCache = () => provider.resetCache();
+  
+  // Attach specific generator methods
+  callback.generateMedicalDetails = (ctx) => provider.generateMedicalDetails(ctx);
+  
   callback.provider = provider;
 
   return callback;

@@ -38,7 +38,11 @@
   {
     "name": "17 - Gender",
     "type": "PDFCheckBox",
-    "options": null,
+    "options": [
+      "Male",
+      "Female",
+      "X"
+    ],
     "isChecked": false
   },
   {
@@ -74,13 +78,19 @@
   {
     "name": "25 - Did you work that day?",
     "type": "PDFCheckBox",
-    "options": null,
+    "options": [
+      "Yes",
+      "No"
+    ],
     "isChecked": false
   },
   {
     "name": "27 - Have you recovered from this disability?",
     "type": "PDFCheckBox",
-    "options": null,
+    "options": [
+      "Yes",
+      "No"
+    ],
     "isChecked": false
   },
   {
@@ -104,7 +114,10 @@
   {
     "name": "32 - Have you since worked for wages or profit?",
     "type": "PDFCheckBox",
-    "options": null,
+    "options": [
+      "Yes",
+      "No"
+    ],
     "isChecked": false
   },
   {
@@ -344,7 +357,10 @@
   {
     "name": "73 - Union Member?",
     "type": "PDFCheckBox",
-    "options": null,
+    "options": [
+      "Yes",
+      "No"
+    ],
     "isChecked": false
   },
   {
@@ -356,7 +372,10 @@
   {
     "name": "76 - Were you claiming or receiving unemployment prior to this disability?",
     "type": "PDFCheckBox",
-    "options": null,
+    "options": [
+      "Yes",
+      "No"
+    ],
     "isChecked": false
   },
   {
@@ -386,49 +405,73 @@
   {
     "name": "2 - A.\tAre you receiving wages, salary or separation pay?",
     "type": "PDFCheckBox",
-    "options": null,
+    "options": [
+      "Yes",
+      "No"
+    ],
     "isChecked": false
   },
   {
     "name": "3 - Unemployment Benefits?",
     "type": "PDFCheckBox",
-    "options": null,
+    "options": [
+      "Yes",
+      "No"
+    ],
     "isChecked": false
   },
   {
     "name": "4 - Paid Family Leave?",
     "type": "PDFCheckBox",
-    "options": null,
+    "options": [
+      "Yes",
+      "No"
+    ],
     "isChecked": false
   },
   {
     "name": "5 - Workers Compensation?",
     "type": "PDFCheckBox",
-    "options": null,
+    "options": [
+      "Yes",
+      "No"
+    ],
     "isChecked": false
   },
   {
     "name": "6 - No fault motor vehicle accident?",
     "type": "PDFCheckBox",
-    "options": null,
+    "options": [
+      "Yes",
+      "No"
+    ],
     "isChecked": false
   },
   {
     "name": "7 - personal injury involving third party?",
     "type": "PDFCheckBox",
-    "options": null,
+    "options": [
+      "Yes",
+      "No"
+    ],
     "isChecked": false
   },
   {
     "name": "8 - Long-term disability benefits under the Federal Social Security Act for this disability?",
     "type": "PDFCheckBox",
-    "options": null,
+    "options": [
+      "Yes",
+      "No"
+    ],
     "isChecked": false
   },
   {
     "name": "9 - If yes is checked",
     "type": "PDFCheckBox",
-    "options": null,
+    "options": [
+      "Received",
+      "Claimed"
+    ],
     "isChecked": false
   },
   {
@@ -476,7 +519,10 @@
   {
     "name": "17 - have you received disability benefits for other periods of disability?",
     "type": "PDFCheckBox",
-    "options": null,
+    "options": [
+      "Yes",
+      "No"
+    ],
     "isChecked": false
   },
   {
@@ -524,7 +570,10 @@
   {
     "name": "25 -  In the year (52 weeks) before your disability began, have you received Paid Family Leave?",
     "type": "PDFCheckBox",
-    "options": null,
+    "options": [
+      "Yes",
+      "No"
+    ],
     "isChecked": false
   },
   {
@@ -626,7 +675,10 @@
   {
     "name": "11 - Is the employee a member of a union?",
     "type": "PDFCheckBox",
-    "options": null,
+    "options": [
+      "Yes",
+      "No"
+    ],
     "isChecked": false
   },
   {
@@ -644,7 +696,14 @@
   {
     "name": "14 - Employees Role",
     "type": "PDFCheckBox",
-    "options": null,
+    "options": [
+      "Employee",
+      "Proprietor",
+      "Partner",
+      "Spouse#20of#20Employer",
+      "Owner",
+      "Co-Owner"
+    ],
     "isChecked": false
   },
   {
@@ -668,7 +727,10 @@
   {
     "name": "18 - Were wages continued during disability?",
     "type": "PDFCheckBox",
-    "options": null,
+    "options": [
+      "Yes",
+      "No"
+    ],
     "isChecked": false
   },
   {
@@ -680,13 +742,19 @@
   {
     "name": "20 - If yes, is reimbursement requested by employer?",
     "type": "PDFCheckBox",
-    "options": null,
+    "options": [
+      "Yes",
+      "No"
+    ],
     "isChecked": false
   },
   {
     "name": "21 - Is the employee's disability work-related?",
     "type": "PDFCheckBox",
-    "options": null,
+    "options": [
+      "Yes",
+      "No"
+    ],
     "isChecked": false
   },
   {
@@ -842,7 +910,12 @@
   {
     "name": "47 - In the preceding 52 weeks has the employee taken leave for:",
     "type": "PDFCheckBox",
-    "options": null,
+    "options": [
+      "NYS#20Disability",
+      "PFL",
+      "Both",
+      "None"
+    ],
     "isChecked": false
   },
   {
@@ -860,7 +933,10 @@
   {
     "name": "50 - Is employee still in your employment?",
     "type": "PDFCheckBox",
-    "options": null,
+    "options": [
+      "Yes",
+      "No"
+    ],
     "isChecked": false
   },
   {
@@ -896,7 +972,10 @@
   {
     "name": "10 - Payment",
     "type": "PDFCheckBox",
-    "options": null,
+    "options": [
+      "Paper#20Check",
+      "Direct#20Deposit"
+    ],
     "isChecked": false
   },
   {
@@ -932,7 +1011,10 @@
   {
     "name": "18 - Does employee contribute?",
     "type": "PDFCheckBox",
-    "options": null,
+    "options": [
+      "Yes",
+      "No"
+    ],
     "isChecked": false
   },
   {
@@ -1058,19 +1140,25 @@
   {
     "name": "4 Checking account",
     "type": "PDFCheckBox",
-    "options": null,
+    "options": [
+      "On"
+    ],
     "isChecked": false
   },
   {
     "name": "4 Savings account",
     "type": "PDFCheckBox",
-    "options": null,
+    "options": [
+      "On"
+    ],
     "isChecked": false
   },
   {
     "name": "EOBs",
     "type": "PDFCheckBox",
-    "options": null,
+    "options": [
+      "Yes"
+    ],
     "isChecked": false
   },
   {

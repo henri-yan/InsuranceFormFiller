@@ -13,9 +13,10 @@
 
 const fs = require('fs');
 const path = require('path');
-const { PDFDocument, PDFName } = require('pdf-lib');
+const { PDFDocument, PDFName, StandardFonts, rgb } = require('pdf-lib');
 const { DataGenerator } = require('./data-generator');
 const { FieldMappings, AIFields } = require('./field-mapping');
+const { PartBCoordinates } = require('./part-b-fields');
 
 /**
  * Get the on-values for each widget in a checkbox field.
@@ -233,6 +234,127 @@ async function fillForm(runId, options = {}) {
     } catch (err) {
       errors.push({ name: fieldName, error: err.message });
     }
+  }
+
+  // ===========================================
+  // PART B - COORDINATE FILLING (Health Care Provider)
+  // ===========================================
+  
+  // Generate Part B specific medical data if AI is enabled
+  let medicalDetails = {
+    diagnosisAnalysis: 'Acute Back Pain (Simulated)',
+    symptoms: 'Pain in lower back, limited mobility',
+    objectiveFindings: 'Muscle spasms observed',
+    icdCode: 'M54.5'
+  };
+
+  if (options.ai && options.aiCallback && options.aiCallback.generateMedicalDetails) {
+    try {
+      log('Generating Part B medical details via AI...');
+      const aiDetails = await options.aiCallback.generateMedicalDetails({
+        claimant: data.claimant,
+        medical: { 
+          condition: data.disability?.description1 || 'Back Injury', // Use generated description as context
+          fullDescription: `${data.disability?.description1} ${data.disability?.description2}`
+        }
+      });
+      medicalDetails = { ...medicalDetails, ...aiDetails };
+      
+      // Merge into main data object for reporting/usage
+      data.medical = { ...data.medical, ...medicalDetails };
+    } catch (err) {
+      console.warn('Failed to generate Part B AI details:', err.message);
+    }
+  }
+
+  // Prepare data context for coordinate mapping lookup
+  const coordinateContext = {
+    claimant: data.claimant,
+    medical: { 
+      ...data.medical, // inherited from data-generator if any
+      ...medicalDetails,
+      hospitalized: false,
+      surgery: false,
+      workRelated: false,
+      firstTreatment: new Date(Date.now() - 86400000 * 10), // 10 days ago
+      recentTreatment: new Date(),
+    },
+    dates: data.dates,
+    medicalProvider: data.medicalProvider || { role: 'Physician' } // Fallback if old data format
+  };
+
+  const pages = pdfDoc.getPages();
+  const targetPage = pages[4]; // Page 5 (Index 4) - Part B Health Care Provider
+  const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
+  const fontSize = 10;
+
+  if (targetPage) {
+    log(`\nProcessing Part B (Health Care Provider) on Page 5...`);
+    
+    for (const [key, config] of Object.entries(PartBCoordinates)) {
+      try {
+        let valueToDraw = null;
+
+        // Resolve value based on source path (e.g., 'claimant.lastName')
+        const getSourceValue = (path) => {
+          return path.split('.').reduce((obj, k) => (obj || {})[k], coordinateContext);
+        };
+
+        if (config.type === 'text') {
+          let val = getSourceValue(config.source);
+          if (val) {
+            val = String(val);
+            if (config.limit && val.length > config.limit) {
+              val = val.substring(0, config.limit);
+            }
+            valueToDraw = val;
+          }
+        } else if (config.type === 'static') {
+          valueToDraw = config.value;
+        } else if (config.type === 'faker') {
+           // We'll just generate it on the fly or reuse generator if exposed
+           // For simplicity, reusing generator instance might require refactoring,
+           // so we'll generate ad-hoc for these specific Part B fields if not in context
+           if (key.includes('phone')) valueToDraw = '212-555-0199';
+           if (key.includes('license number')) valueToDraw = '1234567';
+           if (key.includes('address')) valueToDraw = '123 Medical Plaza, NY';
+           if (key.includes('providers name')) valueToDraw = 'Dr. Jane Smith';
+        } else if (config.type === 'date-now') {
+          const now = new Date();
+          valueToDraw = `${now.getMonth() + 1}/${now.getDate()}/${now.getFullYear()}`;
+        } else if (config.type === 'date-part') {
+          const dateVal = getSourceValue(config.source);
+          if (dateVal) {
+            const d = new Date(dateVal);
+            if (config.part === 'month') valueToDraw = String(d.getMonth() + 1).padStart(2, '0');
+            if (config.part === 'day') valueToDraw = String(d.getDate()).padStart(2, '0');
+            if (config.part === 'year') valueToDraw = String(d.getFullYear());
+          }
+        } else if (config.type === 'check' || config.type === 'boolean-check') {
+           const actualVal = getSourceValue(config.source);
+           if (actualVal === config.value) {
+             valueToDraw = 'X';
+           }
+        }
+
+        if (valueToDraw) {
+          targetPage.drawText(String(valueToDraw), {
+            x: config.x,
+            y: config.y,
+            size: fontSize,
+            font: font,
+            color: rgb(0, 0, 0),
+          });
+          filledFields.push({ name: `[Part B] ${key}`, value: valueToDraw, type: 'coordinate' });
+        }
+
+      } catch (err) {
+        console.warn(`Error filling Part B field ${key}: ${err.message}`);
+        errors.push({ name: `Part B - ${key}`, error: err.message });
+      }
+    }
+  } else {
+    console.warn('Warning: PDF has fewer than 2 pages. Skipping Part B coordinate filling.');
   }
 
   // Preview mode - just print values

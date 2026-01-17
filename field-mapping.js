@@ -15,9 +15,9 @@ const FieldMappings = {
   // ===========================================
 
   // Personal Information
-  '2 - Last Name': { type: 'faker', method: 'person.lastName' },
-  '3 - First Name': { type: 'faker', method: 'person.firstName' },
-  '3a - Middle Initial': { type: 'faker', method: 'string.alpha', args: [{ length: 1, casing: 'upper' }] },
+  '2 - Last Name': { type: 'calculated', generator: 'lastName' },
+  '3 - First Name': { type: 'calculated', generator: 'firstName' },
+  '3a - Middle Initial': { type: 'calculated', generator: 'middleInitial' },
   '4 - Mailing Address Street  Apt': { type: 'faker', method: 'location.streetAddress' },
   '5 - City': { type: 'faker', method: 'location.city' },
   '6 - State': { type: 'static', value: 'NY' },

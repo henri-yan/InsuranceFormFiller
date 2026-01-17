@@ -95,6 +95,10 @@ class DataGenerator {
     const lastName = faker.person.lastName();
     const middleInitial = faker.string.alpha({ length: 1, casing: 'upper' });
 
+    // Generate gender (consistent for entire form)
+    faker.seed(this.seed + 17);
+    const gender = faker.helpers.arrayElement(['Male', 'Female', 'X']);
+
     // Generate employer info
     const employerName = faker.company.name();
     const employerContactName = faker.person.fullName();
@@ -109,7 +113,7 @@ class DataGenerator {
 
     // Checkbox states (seeded random) - realistic probabilities
     const checkboxStates = {
-      gender: faker.datatype.boolean(),
+      // Gender moved to claimant object
       didWorkOnDisabilityDay: faker.datatype.boolean({ probability: 0.3 }),
       hasRecovered: faker.datatype.boolean({ probability: 0.2 }),
       workedForWages: faker.datatype.boolean({ probability: 0.1 }),
@@ -145,6 +149,21 @@ class DataGenerator {
     const priorBenefitEnd = new Date(priorBenefitStart);
     priorBenefitEnd.setDate(priorBenefitEnd.getDate() + faker.number.int({ min: 14, max: 60 }));
 
+    // Generate return to work date (always required)
+    const returnToWorkDate = new Date(now);
+    if (checkboxStates.hasRecovered) {
+       // recovered recently
+       returnToWorkDate.setDate(returnToWorkDate.getDate() - faker.number.int({ min: 0, max: 5 }));
+    } else {
+       // estimated return in future
+       returnToWorkDate.setDate(returnToWorkDate.getDate() + faker.number.int({ min: 14, max: 60 }));
+    }
+
+    // Generate Health Care Provider info
+    const doctorFirstName = faker.person.firstName();
+    const doctorLastName = faker.person.lastName();
+    const doctorType = faker.helpers.arrayElement(['Physician', 'Chiropractor', 'Podiatrist']);
+    
     return {
       runId: this.runId,
       generatedAt: new Date().toISOString(),
@@ -156,6 +175,7 @@ class DataGenerator {
         lastName,
         middleInitial,
         fullName: `${firstName} ${middleInitial}. ${lastName}`,
+        gender, // Stored consistently
         address: faker.location.streetAddress(),
         city: faker.location.city(),
         state: 'NY',
@@ -173,6 +193,7 @@ class DataGenerator {
         lastDayWorked: lastDayWorked.toISOString(),
         employmentStart: employmentStartDate.toISOString(),
         signatureDate: now.toISOString(),
+        returnToWork: returnToWorkDate.toISOString(),
       },
 
       // Employer Info
@@ -189,6 +210,18 @@ class DataGenerator {
         contactEmail: employerEmail,
         contactPhone: employerPhone,
         policyNumber: faker.string.alphanumeric(8).toUpperCase(),
+      },
+
+      // Health Care Provider
+      medicalProvider: {
+        firstName: doctorFirstName,
+        lastName: doctorLastName,
+        fullName: `Dr. ${doctorFirstName} ${doctorLastName}`,
+        role: doctorType,
+        licenseNumber: faker.string.numeric(7),
+        address: faker.location.streetAddress(),
+        phone: faker.phone.number('212-###-####'),
+        state: 'NY'
       },
 
       // Wages
@@ -228,7 +261,7 @@ class DataGenerator {
       // Conditional field data
       conditionalData: {
         // Return to work date (if recovered)
-        returnToWorkDate: checkboxStates.hasRecovered ? now.toISOString() : null,
+        returnToWorkDate: returnToWorkDate.toISOString(),
         // Worked for wages dates
         workedForWagesDates: checkboxStates.workedForWages ? `${faker.date.recent({ days: 7 }).toLocaleDateString('en-US')}` : '',
         // Unemployment explanation (item 12)
@@ -260,12 +293,16 @@ class DataGenerator {
     return { month, day, year, full: `${month}/${day}/${year}` };
   }
 
-  // Get a calculated field value
-  getCalculatedValue(generator, args = []) {
-    const generators = {
-      // Date of Birth
-      dobMonth: () => this.formatDate(this.data.claimant.dateOfBirth).month,
-      dobDay: () => this.formatDate(this.data.claimant.dateOfBirth).day,
+      // Get a calculated field value
+    getCalculatedValue(generator, args = []) {
+      const generators = {
+        // Claimant Names (Consistent)
+        firstName: () => this.data.claimant.firstName,
+        lastName: () => this.data.claimant.lastName,
+        middleInitial: () => this.data.claimant.middleInitial,
+  
+        // Date of Birth
+        dobMonth: () => this.formatDate(this.data.claimant.dateOfBirth).month,      dobDay: () => this.formatDate(this.data.claimant.dateOfBirth).day,
       dobYear: () => this.formatDate(this.data.claimant.dateOfBirth).year,
 
       // Disability Start Date
@@ -274,9 +311,9 @@ class DataGenerator {
       disabilityStartYear: () => this.formatDate(this.data.dates.disabilityStart).year,
 
       // Return to work (if recovered)
-      returnToWorkMonth: () => this.data.checkboxes.hasRecovered ? this.formatDate(new Date().toISOString()).month : '',
-      returnToWorkDay: () => this.data.checkboxes.hasRecovered ? this.formatDate(new Date().toISOString()).day : '',
-      returnToWorkYear: () => this.data.checkboxes.hasRecovered ? this.formatDate(new Date().toISOString()).year : '',
+      returnToWorkMonth: () => this.formatDate(this.data.dates.returnToWork).month,
+      returnToWorkDay: () => this.formatDate(this.data.dates.returnToWork).day,
+      returnToWorkYear: () => this.formatDate(this.data.dates.returnToWork).year,
 
       // Worked dates
       workedDates: () => '',
@@ -414,8 +451,7 @@ class DataGenerator {
 
       // Gender selection - randomly choose Male, Female, or X
       genderSelection: () => {
-        faker.seed(this.seed + 17); // Consistent seed for gender field
-        return faker.helpers.arrayElement(['Male', 'Female', 'X']);
+        return this.data.claimant.gender;
       },
     };
 
